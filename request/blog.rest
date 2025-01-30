@@ -1,0 +1,27 @@
+GET http://localhost:3003/api/blogs
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxpYW0iLCJ1c2VyIjoiNjc5YjMyMzA5NjhjNzA0ZDU0YzEyZWM3IiwiaWF0IjoxNzM4MjQwMTc5LCJleHAiOjE3MzgyNDM3Nzl9.rm8HftofDnn8zBc4ctoPQcO2YD5fIdFMeh5yjVbxqLw
+
+{
+   "url": "https://Fullstack.com/",
+  "title": "Fullstack is fun ",
+  "author": "Fullstack",
+  "likes":5,
+  "id": "679b31ff968c704d54c12ec5"
+}
+###
+DELETE http://localhost:3003/api/blogs/6790dc2c48dd3e727eea6bd4
+
+###
+PUT http://localhost:3003/api/blogs/6790dd5c48dd3e727eea6bee
+Content-Type: application/json
+
+{
+    "title": "Testing my REST APIs",
+    "author": "Liam Will",
+    "url": "https://example.com/rest-apis",
+    "likes": 100
+  }
