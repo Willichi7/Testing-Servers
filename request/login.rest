@@ -1,6 +1,5 @@
 POST http://localhost:3004/api/login
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxpYW0iLCJ1c2VySWQiOiI2NzliODJiMzU3YjkxMmM1Y2Y1NmNmY2QiLCJpYXQiOjE3MzgzNDIzNTAsImV4cCI6MTczODM0NTk1MH0.HyrGNnkl_W5xDs60CWjyRviZOakdj5045w50X8-kvw4
 
 
 {
