@@ -32,7 +32,7 @@ app.use(requestLogger)
 // handler of request with unknown endpoint
 app.use(unknownEndPoint)
 
-// error handling for middleware 
+// error handling for middleware
 app.use(errorHandler)
 
 

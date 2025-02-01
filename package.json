@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@stylistic/eslint-plugin-js": "^3.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^9.19.0",
     "globals": "^15.14.0",
