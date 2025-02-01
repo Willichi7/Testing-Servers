@@ -1,22 +1,26 @@
-GET http://localhost:3003/api/blogs
+GET http://localhost:3004/api/blogs
 
 ###
-POST http://localhost:3003/api/blogs
+POST http://localhost:3004/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxpYW0iLCJ1c2VyIjoiNjc5YjMyMzA5NjhjNzA0ZDU0YzEyZWM3IiwiaWF0IjoxNzM4MjQwMTc5LCJleHAiOjE3MzgyNDM3Nzl9.rm8HftofDnn8zBc4ctoPQcO2YD5fIdFMeh5yjVbxqLw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxpYW0iLCJ1c2VySWQiOiI2NzliODJiMzU3YjkxMmM1Y2Y1NmNmY2QiLCJpYXQiOjE3MzgzNDIzNTAsImV4cCI6MTczODM0NTk1MH0.HyrGNnkl_W5xDs60CWjyRviZOakdj5045w50X8-kvw4
+
 
 {
-   "url": "https://Fullstack.com/",
-  "title": "Fullstack is fun ",
-  "author": "Fullstack",
-  "likes":5,
-  "id": "679b31ff968c704d54c12ec5"
+   "url": "https://mongooser_for_beginners.com/",
+  "title": "Mongoose for beginners ",
+  "author": "Mongoose",
+  "likes": 10,
+  "id": "679b82b357b912c5cf56cfcd"
 }
 ###
-DELETE http://localhost:3003/api/blogs/6790dc2c48dd3e727eea6bd4
+DELETE http://localhost:3004/api/blogs/679b833257b912c5cf56cfd6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxpYW0iLCJ1c2VyIjoiNjc5YjgyYjM1N2I5MTJjNWNmNTZjZmNkIiwiaWF0IjoxNzM4MjUyMDQ2LCJleHAiOjE3MzgyNTU2NDZ9.7oZ93Bh4BahJtrZw5C0k-cF43wK8LJf7vWJE7aHZves
+
 
 ###
-PUT http://localhost:3003/api/blogs/6790dd5c48dd3e727eea6bee
+PUT http://localhost:3004/api/blogs/6790dd5c48dd3e727eea6bee
 Content-Type: application/json
 
 {

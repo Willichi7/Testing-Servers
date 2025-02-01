@@ -1,5 +1,6 @@
 const Blog = require("../model/blog");
-const User = require("../model/user");;
+const User = require("../model/user");
+const { userExtractor } = require("../utils/middleware");
 require('dotenv').config()
 const blogController = require('express').Router()
 
@@ -9,18 +10,18 @@ blogController.get('/', async (req, res) => {
    res.json(blogs)
 })
 
-blogController.post('/', async (req, res) => {
-  const body = req.body
-   const user = await User.findById(body.id)
+blogController.post('/', userExtractor, async (req, res) => {
+   const { title, author, url, likes } = req.body;
+   const user = await User.findById(req.user.userId)
    if (!user.blogs) {
       user.blogs = []
    }
    
    const blog = new Blog({
-      title: body.title,
-      author: body.author,
-      url: body.url,
-      likes : body.likes === undefined ? false : body.likes,
+      title,
+      author,
+      url,
+      likes : likes || 0,
       user: user.id
    })
    const savedBlog = await blog.save()
@@ -45,9 +46,17 @@ blogController.post('/', async (req, res) => {
     res.json(blog)
  })
 
-blogController.delete('/:id',async (req, res, next) => {
-   await Blog.findByIdAndDelete(req.params.id)
-   res.status(204).end()
+blogController.delete('/:id', userExtractor, async (req, res, next) => {
+   const blog = await Blog.findById(req.params.id)
+   if (!blog) {
+      return res.status(404).json({ error: 'Blog not found' })
+   }
+   if (blog.user.toString() === req.user.user.toString()) {
+      await Blog.findByIdAndDelete(req.params.id)
+      res.status(204).end()
+   } else {
+      res.status(403).json({ error: 'Permission Denied' })
+   }
 })
 
 
