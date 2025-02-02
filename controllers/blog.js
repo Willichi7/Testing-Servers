@@ -31,7 +31,7 @@ blogController.post('/', userExtractor, async (req, res) => {
 })
 
 //
-blogController.get('/:id', async (req, res, next) => {
+blogController.get('/:id', async (req, res, ) => {
   const blog = await Blog.findById(req.params.id)
   if(blog) {
     res.json(blog)
@@ -40,13 +40,13 @@ blogController.get('/:id', async (req, res, next) => {
   }
 })
 
-blogController.put('/:id', async (req, res, next) => {
+blogController.put('/:id', async (req, res) => {
   const blog = req.body
   await Blog.findByIdAndUpdate(req.params.id, blog, { new: true, runValidators: true })
   res.json(blog)
 })
 
-blogController.delete('/:id', userExtractor, async (req, res, next) => {
+blogController.delete('/:id', userExtractor, async (req, res) => {
   const blog = await Blog.findById(req.params.id)
   if (!blog) {
     return res.status(404).json({ error: 'Blog not found' })
